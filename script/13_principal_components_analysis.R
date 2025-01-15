@@ -30,17 +30,34 @@ data <- data[c(1:37,39,40),]
 names(data)
 names(data)[names(data) == "Lon"] <- "Longitude"
 names(data)[names(data) == "Lat"] <- "Latitude"
-names(data)[names(data) == "Anteil_Kraut_flight"] <- "share_herbs_flight"
-names(data)[names(data) == "Anteil_Strauch_flight"] <- "share_shrubs_flight"
-names(data)[names(data) == "Anteil_Baum_flight"] <- "share_trees_flight"
-names(data)[names(data) == "Anteil_Kraut_drone"] <- "share_herbs_drone"
-names(data)[names(data) == "Anteil_Strauch_drone"] <- "share_shrubs_drone"
-names(data)[names(data) == "Anteil_Baum_drone"] <- "share_trees_drone"
-names(data)[names(data) == "sitzwarten_25sqm"] <- "perches_25sqm"
-names(data)[names(data) == "Gewicht.17.5"] <- "Weight_biomass_17_5"
-names(data)[names(data) == "Gewicht.31.5"] <- "Weight_biomass_31_5"
-names(data)[names(data) == "Gewicht.14.6"] <- "Weight_biomass_14_6"
-names(data)[names(data) == "Gewicht.1.7"] <- "Weight_biomass_01_7"
+names(data)[names(data) == "Anteil_Kraut_flight"] <- "Share herbs flight"
+names(data)[names(data) == "Anteil_Strauch_flight"] <- "Share shrubs flight"
+names(data)[names(data) == "Anteil_Baum_flight"] <- "Share trees flight"
+names(data)[names(data) == "Anteil_Kraut_drone"] <- "Share herbs drone"
+names(data)[names(data) == "Anteil_Strauch_drone"] <- "Share shrubs drone"
+names(data)[names(data) == "Anteil_Baum_drone"] <- "Share trees drone"
+names(data)[names(data) == "sitzwarten_25sqm"] <- "Perches 25sqm"
+names(data)[names(data) == "Gewicht.17.5"] <- "Weight biomass 17_5"
+names(data)[names(data) == "Gewicht.31.5"] <- "Weight biomass 31_5"
+names(data)[names(data) == "Gewicht.14.6"] <- "Weight biomass 14_6"
+names(data)[names(data) == "Gewicht.1.7"] <- "Weight biomass 01_7"
+
+names(data)[names(data) == "mean_h_flight"] <- "mean h flight"
+names(data)[names(data) == "sd_h_flight"] <- "SD h flight"
+names(data)[names(data) == "max_h_flight"] <- "Max h flight"
+names(data)[names(data) == "rumple_flight"] <- "Rumple flight"
+names(data)[names(data) == "sd_dgm_flight"] <- "SD DTM flight"
+names(data)[names(data) == "viewshed_flight"] <- "Viewshed flight"
+names(data)[names(data) == "mean_h_drone"] <- "Mean h drone"
+names(data)[names(data) == "sd_h_drone"] <- "SD h drone"
+names(data)[names(data) == "max_h_drone"] <- "Max h drone"
+names(data)[names(data) == "rumple_drone"] <- "Rumple drone"
+names(data)[names(data) == "sd_dgm_drone"] <- "SD DTM drone"
+names(data)[names(data) == "viewshed_drone"] <- "Viewshed drone"
+names(data)[names(data) == "kraut_mean"] <- "Herb mean h"
+names(data)[names(data) == "kraut_sd"] <- "Herb SD h"
+names(data)[names(data) == "mean_biomass"] <- "Mean biomass"
+
 names(data)
 
 
@@ -114,6 +131,8 @@ ggbiplot(drone_base,
          ellipse.prob = 0.68)+
   labs(colour = "Breeding Occurrence", x = "PC1 (48.2%)", y = "PC2 (16.3%)") +
   theme_bw()+  
+  theme(panel.grid.minor = element_blank())+
+  theme(panel.grid.major = element_blank())+
   xlim(c(-2.9, 2.3))
 
 
@@ -139,7 +158,7 @@ a <- ggplot(data = pca.scores, aes(x = breeding, y = PC1)) +
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=19)"))+
   xlab("Breeding site")+
   ylab("PC1")+
-  theme_minimal()+
+  theme_classic()+
   theme(legend.position = "none")
 a
 
@@ -149,7 +168,7 @@ b <- ggplot(data = pca.scores, aes(x = breeding, y = PC2)) +
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=19)"))+
   xlab("Breeding site")+
   ylab("PC2")+
-  theme_minimal()+
+  theme_classic()+
   theme(legend.position = "none")+
   geom_text(label = "p < 0.05", x= 1.5, y = 2.5)
 b

@@ -24,8 +24,8 @@ data$breeding <- as.factor(data$breeding)
 a <- ggplot(data=data, aes(x=breeding, y=mean_h_flight))+
   geom_boxplot()+
   xlab("Breeding site")+
-  ylab("mean height (m)")+
-  theme_minimal()+
+  ylab("Mean vegetation height (m)")+
+  theme_classic()+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) +
   # ggtitle(" ", subtitle = "official aerial survey")+
   ylim(0,2)
@@ -45,7 +45,7 @@ b <- ggplot(data=data, aes(x=breeding, y=mean_h_drone))+
   geom_boxplot()+
   xlab("Breeding site")+
   ylab("")+
-  theme_minimal()+
+  theme_classic()+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) +
   # ggtitle( " " , subtitle = "LiDAR drone ")+
   ylim(0,2)
@@ -73,8 +73,8 @@ grid.arrange(
 c <- ggplot(data=data, aes(x=breeding, y=sd_h_flight))+
   geom_boxplot()+
   xlab("Breeding site")+
-  ylab("Standard deviation height (m)")+
-  theme_minimal()+
+  ylab("SD vegetation height (m)")+
+  theme_classic()+
   ylim(0,5)+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) 
 # + ggtitle(" ", subtitle = "official aerial survey")
@@ -93,7 +93,7 @@ d <- ggplot(data=data, aes(x=breeding, y=sd_h_drone))+
   geom_boxplot()+
   xlab("Breeding site")+
   ylab("")+
-  theme_minimal()+
+  theme_classic()+
   ylim(0,5)+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) 
 #+ ggtitle(" ", subtitle = "LiDAR drone ")
@@ -121,8 +121,8 @@ grid.arrange(
 e <- ggplot(data=data, aes(x=breeding, y=max_h_flight))+
   geom_boxplot()+
   xlab("Breeding site")+
-  ylab("maximum height (m)")+
-  theme_minimal()+
+  ylab("Max. vegetation height (m)")+
+  theme_classic()+
   ylim(0,40)+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) +
  #  ggtitle(" ", subtitle = "official aerial survey")+
@@ -144,7 +144,7 @@ f <- ggplot(data=data, aes(x=breeding, y=max_h_drone))+
   geom_boxplot()+
   xlab("Breeding site")+
   ylab("")+
-  theme_minimal()+
+  theme_classic()+
   ylim(0,40)+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) 
  #  ggtitle(" ", subtitle = "LiDAR drone ")
@@ -177,7 +177,7 @@ g <- ggplot(data=data, aes(x=breeding, y=rumple_flight))+
   geom_boxplot()+
   xlab("Breeding site")+
   ylab("Rumple Index")+
-  theme_minimal()+
+  theme_classic()+
   ylim(1,1.02)+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) +
  # ggtitle(" ", subtitle = "official aerial survey")+
@@ -197,7 +197,7 @@ h <- ggplot(data=data, aes(x=breeding, y=rumple_drone))+
   geom_boxplot()+
   xlab("Breeding site")+
   ylab("")+
-  theme_minimal()+
+  theme_classic()+
   ylim(1,1.02)+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) +
  #  ggtitle(" ", subtitle = "LiDAR drone ")+
@@ -228,7 +228,7 @@ i <- ggplot(data=data, aes(x=breeding, y=sd_dgm_flight))+
   geom_boxplot()+
   xlab("Breeding site")+
   ylab("SD terrain model")+
-  theme_minimal()+
+  theme_classic()+
   ylim(0,6.5)+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) +
   #ggtitle(" ", subtitle = "official aerial survey")+
@@ -252,7 +252,7 @@ j <- ggplot(data=data, aes(x=breeding, y=sd_dgm_drone))+
   geom_boxplot()+
   xlab("Breeding site")+
   ylab("")+
-  theme_minimal()+
+  theme_classic()+
   ylim(0,6.5)+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=19)")) +
   #ggtitle(" ", subtitle = "LiDAR drone ")+
@@ -285,8 +285,8 @@ grid.arrange(
 k <- ggplot(data=data, aes(x=breeding, y=viewshed_flight))+
   geom_boxplot()+
   xlab("Breeding site")+
-  ylab("viewshed")+
-  theme_minimal()+
+  ylab("Viewshed (%)")+
+  theme_classic()+
   ylim(0,1)+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) 
  # ggtitle(" ", subtitle = "official aerial survey")
@@ -305,7 +305,7 @@ l <- ggplot(data=data, aes(x=breeding, y=viewshed_drone))+
   geom_boxplot()+
   xlab("Breeding site")+
   ylab("")+
-  theme_minimal()+
+  theme_classic()+
   ylim(0,1)+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) +
   #ggtitle(" ", subtitle = "LiDAR drone ")+
@@ -337,7 +337,7 @@ m <- ggplot(data=data, aes(x=breeding, y=Anteil_Kraut_flight))+
   geom_boxplot()+
   ylab("Herb Layer (%)")+
   xlab("Breeding site")+
-  theme_minimal()+
+  theme_classic()+
   ylim(0.8,1)+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) 
  # ggtitle(" ", subtitle = "official aerial survey")
@@ -356,7 +356,7 @@ n <- ggplot(data=data, aes(x=breeding, y=Anteil_Kraut_drone))+
   geom_boxplot()+
   xlab("Breeding site")+
   ylab("")+
-  theme_minimal()+
+  theme_classic()+
   ylim(0.8,1)+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) 
   #ggtitle(" ", subtitle = "LiDAR drone ")
@@ -388,7 +388,7 @@ o <- ggplot(data=data, aes(x=breeding, y=Anteil_Strauch_flight))+
   geom_boxplot()+
   xlab("Breeding site")+
   ylab("Shrub Layer (%)")+
-  theme_minimal()+
+  theme_classic()+
   ylim(0,0.1)+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) 
 #  ggtitle(" ", subtitle = "official aerial survey")
@@ -407,7 +407,7 @@ p <- ggplot(data=data, aes(x=breeding, y=Anteil_Strauch_drone))+
   geom_boxplot()+
   xlab("Breeding site")+
   ylab("")+
-  theme_minimal()+
+  theme_classic()+
   ylim(0,0.1)+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) 
 #  ggtitle(" ", subtitle = "LiDAR drone ")
@@ -438,7 +438,7 @@ q <- ggplot(data=data, aes(x=breeding, y=Anteil_Baum_flight))+
   geom_boxplot()+
   xlab("Breeding site")+
   ylab("Tree Layer (%)")+
-  theme_minimal()+
+  theme_classic()+
   ylim(0,0.18)+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) 
  # ggtitle(" ", subtitle = "official aerial survey")
@@ -457,7 +457,7 @@ r <- ggplot(data=data, aes(x=breeding, y=Anteil_Baum_drone))+
   geom_boxplot()+
   xlab("Breeding site")+
   ylab("")+
-  theme_minimal()+
+  theme_classic()+
   ylim(0,0.18)+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) 
  # ggtitle(" ", subtitle = "LiDAR drone ")
@@ -487,7 +487,7 @@ s <- ggplot(data=data, aes(x=breeding, y=builddist))+
   geom_boxplot()+
   xlab("Breeding site")+
   ylab("Distanz zu Gebäuden (m)")+
-  theme_minimal()+
+  theme_classic()+
   ylim(0,850)+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) +
   ggtitle(" ", subtitle = "Gebäude")
@@ -509,7 +509,7 @@ t <- ggplot(data=data, aes(x=breeding, y=roaddist))+
   geom_boxplot()+
   xlab("Breeding site")+
   ylab("Distanz zu Straßen (m)")+
-  theme_minimal()+
+  theme_classic()+
   ylim(0,200)+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) +
   ggtitle(" ", subtitle = "Straßen")+
@@ -531,7 +531,7 @@ u <- ggplot(data=data, aes(x=breeding, y=farmdist))+
   geom_boxplot()+
   xlab("Breeding site")+
   ylab("Distanz zu intensiven Äckern (m)")+
-  theme_minimal()+
+  theme_classic()+
   ylim(0,3500)+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) +
   ggtitle(" ", subtitle = "Äcker")
@@ -562,7 +562,7 @@ v <- ggplot(data=data, aes(x=breeding, y=sitzwarten_25sqm))+
   geom_boxplot()+
   xlab("Breeding site")+
   ylab("Number of perches")+
-  theme_minimal()+
+  theme_classic()+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) +
  #  ggtitle("Anzahl Sitzwarten")+
   # geom_text(label = ".", x= 1.5, y = 1)+
@@ -585,7 +585,7 @@ w <- ggplot(data=data, aes(x=breeding, y=kraut_sd))+
   geom_boxplot()+
   xlab("Breeding site")+
   ylab("SD height herb layer")+
-  theme_minimal()+
+  theme_classic()+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) +
   # ggtitle(" ", subtitle = "official aerial survey")+
   ylim(0,0.25)
@@ -605,7 +605,7 @@ x <- ggplot(data=data, aes(x=breeding, y=kraut_mean))+
   geom_boxplot()+
   xlab("Breeding site")+
   ylab("mean height herb layer")+
-  theme_minimal()+
+  theme_classic()+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) +
   # ggtitle(" ", subtitle = "official aerial survey")+
   ylim(0,0.3)
@@ -635,7 +635,7 @@ aa <- ggplot(data=data, aes(x=breeding, y=mean_biomass))+
   geom_boxplot()+
   xlab("Breeding site")+
   ylab("mean biomass")+
-  theme_minimal()+
+  theme_classic()+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) +
   # ggtitle(" ", subtitle = "official aerial survey")+
   ylim(0,120)
@@ -655,7 +655,7 @@ ab <- ggplot(data=data, aes(x=breeding, y=mean_biomass_log))+
   geom_boxplot()+
   xlab("Breeding site")+
   ylab("mean biomass (log")+
-  theme_minimal()+
+  theme_classic()+
   scale_x_discrete(labels= c("yes\n(n=20)", "no\n(n=20)")) +
   # ggtitle(" ", subtitle = "official aerial survey")+
   ylim(2,5)
